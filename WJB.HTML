@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Reasons Why I Love WJB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            text-align: center;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            width: 80%;
+        }
+        h1 {
+            font-size: 24px;
+            color: #ff4b5c;
+        }
+        #reason {
+            font-size: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: white;
+            min-height: 50px;
+        }
+        button {
+            background: #ff4b5c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #d43f4a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>100 Reasons Why I Love WJB ❤️</h1>
+        <p id="reason">Click the button to see a reason!</p>
+        <button onclick="showReason()">Show Another Reason</button>
+    </div>
+
+    <script>
+        const reasons = [
+            "You always make me smile 😊",
+            "You have the kindest heart ❤️",
+            "You make even the worst days better 🌈",
+            "Your laugh is my favorite sound 🎶",
+            "You are incredibly thoughtful 💡",
+            "You make me feel safe and loved 🤗",
+            "You believe in me when I doubt myself 💪",
+            "Your hugs are the best in the world 🫂",
+            "You light up every room you enter ✨",
+            "Your support means everything to me 🛟",
+            "You always know what to say 🗣️",
+            "You give the best advice 🧠",
+            "You are the most patient person I know 🕰️",
+            "Your sense of humor is unmatched 😂",
+            "You make every moment special 💫",
+            "You inspire me to be a better person 🌟",
+            "You always have my back 🛡️",
+            "Your kisses are magical 💋",
+            "You know how to cheer me up 🎭",
+            "You are my home no matter where we are 🏡",
+            "You make the little things in life beautiful 🌻",
+            "You encourage my dreams and passions 🚀",
+            "You never give up on us 💖",
+            "Your touch is comforting 🤲",
+            "You are a wonderful listener 👂",
+            "You challenge me to grow 🌱",
+            "Your heart is full of love 💕",
+            "You are strong and resilient 💪",
+            "You make my life colorful 🎨",
+            "You are my greatest adventure 🌍",
+            "You are the love of my life 🥰",
+            "You bring so much joy into my life 🎈",
+            "You make everyday feel special 📆",
+            "You see the best in me ✨",
+            "You support my wild ideas 💡",
+            "You are incredibly brave 🦸‍♂️",
+            "Your kindness is contagious 🥰",
+            "You are my sunshine ☀️",
+            "Your eyes tell me everything I need to know 👀",
+            "You are my favorite person in the world 🌎",
+            "You are perfect just the way you are 🥰",
+            "You make love feel effortless 💞",
+            "You have a heart of gold 💛",
+            "You are my happy place 🌈",
+            "Your love makes me strong 💖",
+            "You make my life feel like a fairytale ✨",
+            "You give the best surprises 🎁",
+            "Your voice is my favorite sound 🎶",
+            "You understand me like no one else does 🧩",
+            "Your love is my greatest blessing 🙏",
+            "You make every day brighter ☀️",
+            "Your texts make my whole day 📱",
+            "You make my world a better place 🌍",
+            "Your warmth and love are everything ❤️",
+            "You complete me in every way 🧩",
+            "You make love look easy 💕",
+            "You bring peace to my chaos 🌊",
+            "You make me feel invincible 🦸‍♀️",
+            "You see the beauty in everything 🌸",
+            "You make the hard days easier 🫂",
+            "You make the good days unforgettable 🥳",
+            "Your love is all I need 💖",
+            "Your energy is infectious ⚡",
+            "You make my heart race ❤️‍🔥",
+            "You are my dream come true 🌟",
+            "You remind me what love truly means ❤️",
+            "You always see the good in people 🥰",
+            "You make even the rain feel romantic ☔",
+            "You are the best thing that ever happened to me 🏆",
+            "You make my heart feel full 💓",
+            "You make every second count ⏳",
+            "You make my soul happy 😍",
+            "You are my soulmate 🔗",
+            "You are my everything 💫",
+            "You are my person 👩‍❤️‍👨",
+            "You are the reason I believe in love 💘",
+            "You give my life meaning 🌍",
+            "You make me feel like the luckiest person alive 🍀",
+            "You are irreplaceable 💎",
+            "You are my heart and soul ❤️",
+            "You make me feel truly loved 🥰",
+            "You are my best friend and my love 💑",
+            "You are the love story I never knew I needed 📖",
+            "You are simply amazing 💖",
+            "You are my forever and always 🔒",
+            "You make love feel like magic ✨",
+            "You are the sweetest person I know 🍯",
+            "You make my world brighter 🌞",
+            "You are my fairy tale ending 📖",
+            "You are my one and only 💞",
+            "You are the missing piece I always needed 🧩",
+            "You are my favorite hello and hardest goodbye 👋",
+            "You make my life extraordinary 🌟",
+            "You are my greatest treasure 💎",
+            "You make love feel limitless 💕",
+            "You are the reason my heart beats ❤️",
+            "You are perfect to me 🥰",
+            "You are my forever love 💍",
+            "You are the best part of my life 💖",
+            "You are my happily ever after ✨"
+        ];
+
+        function showReason() {
+            const reasonElement = document.getElementById("reason");
+            const randomIndex = Math.floor(Math.random() * reasons.length);
+            reasonElement.innerText = reasons[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
